@@ -11,7 +11,7 @@ def is_file_updated(file_path):
 
 def update_file(file_path):
     """Update the identified file by appending a timestamp to its content."""
-    current_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+    current_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()).lstrip("0")
     with open(file_path, 'a') as file:
         file.write(f"\nUpdated at: {current_time}")
 
@@ -48,4 +48,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-Updated at: 2023-12-11 21:22:04
